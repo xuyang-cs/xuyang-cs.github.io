@@ -1,0 +1,13 @@
+{% if include.paper.doi %}
+  <a href="https://doi.org/{{ include.paper.doi | escape }}">DOI</a>
+{% endif %}
+{% if include.paper.paperurl and include.paper.paperurl != '' %}
+  {% if include.paper.doi %} · {% endif %}
+  <a href="{{ include.paper.paperurl | relative_url | escape }}">Paper PDF</a>
+{% endif %}
+{% unless include.paper.doi %}
+  {% if include.paper.publication_url %}
+    {% if include.paper.paperurl and include.paper.paperurl != '' %} · {% endif %}
+    <a href="{{ include.paper.publication_url | escape }}">Google Scholar</a>
+  {% endif %}
+{% endunless %}

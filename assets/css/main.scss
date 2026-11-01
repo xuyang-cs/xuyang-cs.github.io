@@ -41,3 +41,35 @@
     "vendor/font-awesome/solid",
     "vendor/font-awesome/brands"
 ;
+.publication-entry h4 {
+  font-size: 1.15em;
+  line-height: 1.5;
+  margin-bottom: 0.4em;
+}
+
+.publication-honor {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  max-width: 100%;
+  padding: 0.3em 0.65em;
+  margin: 0.25em 0;
+  border: 1px solid;
+  border-radius: 6px;
+  font-size: 0.72em;
+  font-weight: 600;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+.publication-honor {
+  color: #855412;
+  background: #fff7e6;
+  border-color: #e9cd94;
+}
+
+html[data-theme="dark"] .publication-honor {
+  color: #f0ce88;
+  background: #362c1c;
+  border-color: #725a31;
+}

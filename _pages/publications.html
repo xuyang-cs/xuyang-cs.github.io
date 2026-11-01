@@ -5,32 +5,29 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
-
-{% include base_path %}
-
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
+{% assign publications = site.publications | sort: 'date' | reverse %}
+{% assign categories = 'conferences,manuscripts' | split: ',' %}
+{% for category in categories %}
+  {% assign papers = publications | where: 'category', category %}
+  {% if papers.size > 0 %}
+    {% if category == 'manuscripts' %}
+      <h2>Journal Papers</h2>
+    {% else %}
+      <h2>Conference Papers</h2>
+    {% endif %}
+    {% assign current_year = '' %}
+    {% for paper in papers %}
+      {% assign year = paper.date | date: '%Y' %}
+      {% if year != current_year %}
+        <h3>{{ year }}</h3>
+        {% assign current_year = year %}
       {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
+      <article class="publication-entry">
+        <h4>{{ paper.title | escape }} {% include publication-honor.html paper=paper %}</h4>
+        <p>{{ paper.authors | escape | replace: 'Xu Yang', '<strong>Xu Yang</strong>' }}<br />
+        <em>{{ paper.venue | escape }}</em>, {{ year }}.<br />
+        {% include publication-links.html paper=paper %}</p>
+      </article>
     {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
-
-
-
+  {% endif %}
+{% endfor %}
