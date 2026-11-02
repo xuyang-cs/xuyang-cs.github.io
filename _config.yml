@@ -12,7 +12,7 @@ site_theme               : "default" # The available themes options are "default
 title                    : "Xu Yang"
 title_separator          : "-"
 name                     : &name "Xu Yang"
-description              : &description "Your Name's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
+description              : &description "Xu Yang — Lecturer at Xiangtan University. Research in trustworthy AI, formal methods, constraint solving, and evolutionary computation."   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : "https://xuyang-cs.github.io" # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -30,7 +30,7 @@ author:
   location         : "Xiangtan, China"
   employer         : "Xiangtan University"
   uri              : # URL
-  email            : "xuyang@xtu.edn.cn" 
+  email            : "xuyang@xtu.edu.cn"
 
   # Academic websites
   academia         : # URL

@@ -2,7 +2,7 @@
 title: 'A staged fuzzy evolutionary algorithm for constrained large-scale multiobjective optimization'
 collection: publications
 category: manuscripts
-paperurl: ''
+paperurl: '/files/asc-2024-zhou.pdf'
 permalink: /publication/a-staged-fuzzy-evolutionary-algorithm-for-constrained-large-scale-multiobjective-optimization/
 date: 2024-12-01
 venue: 'Applied Soft Computing'

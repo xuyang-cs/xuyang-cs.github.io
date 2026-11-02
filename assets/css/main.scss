@@ -41,10 +41,47 @@
     "vendor/font-awesome/solid",
     "vendor/font-awesome/brands"
 ;
+.publication-entry {
+  margin: 0 0 2em;
+}
+
 .publication-entry h4 {
   font-size: 1.15em;
   line-height: 1.5;
-  margin-bottom: 0.4em;
+  margin: 0 0 0.4em;
+}
+
+.publication-entry p {
+  margin: 0;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.publication-year {
+  margin: 1.7em 0 0.9em;
+  font-size: 0.95em;
+  font-weight: 500;
+  color: var(--global-text-color-light);
+}
+
+.publication-honor-row {
+  margin-bottom: 0.5em;
+  font-size: 1.15em;
+}
+
+.publication-links {
+  display: inline-block;
+  margin-top: 0.4em;
+  font-size: 0.9em;
+}
+
+.archive .publication-links a {
+  text-decoration: none;
+}
+
+.archive .publication-links a:hover,
+.archive .publication-links a:focus-visible {
+  text-decoration: underline;
 }
 
 .publication-honor {

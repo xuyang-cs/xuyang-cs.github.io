@@ -1,3 +1,4 @@
+<span class="publication-links">
 {% if include.paper.doi %}
   <a href="https://doi.org/{{ include.paper.doi | escape }}">DOI</a>
 {% endif %}
@@ -11,3 +12,4 @@
     <a href="{{ include.paper.publication_url | escape }}">Google Scholar</a>
   {% endif %}
 {% endunless %}
+</span>

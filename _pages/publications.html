@@ -19,11 +19,12 @@ author_profile: true
     {% for paper in papers %}
       {% assign year = paper.date | date: '%Y' %}
       {% if year != current_year %}
-        <h3>{{ year }}</h3>
+        <h3 class="publication-year">{{ year }}</h3>
         {% assign current_year = year %}
       {% endif %}
       <article class="publication-entry">
-        <h4>{{ paper.title | escape }} {% include publication-honor.html paper=paper %}</h4>
+        <h4>{{ paper.title | escape }}</h4>
+        {% if paper.honor %}<div class="publication-honor-row">{% include publication-honor.html paper=paper %}</div>{% endif %}
         <p>{{ paper.authors | escape | replace: 'Xu Yang', '<strong>Xu Yang</strong>' }}<br />
         <em>{{ paper.venue | escape }}</em>, {{ year }}.<br />
         {% include publication-links.html paper=paper %}</p>
